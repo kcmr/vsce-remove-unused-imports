@@ -1,70 +1,26 @@
-# remove-unused-imports README
+# Remove Unused Imports
 
-This is the README for your extension "remove-unused-imports". After writing up a brief description, we recommend including the following sections.
+VS Code extension to remove unused ES6 imports inside JavaScript and TypeScript files (`.js`, `.jsx`, `.ts` and `.tsx` extensions) without changing the current order, as opposed to the native VS Code "Sort Imports" functionality.
 
-## Features
+![Remove Unused Imports screenshot](images/remove-unused-imports.gif)
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Usage
 
-For example if there is an image subfolder under your extension project workspace:
+- **Open the Command Palette** (`Ctrl/Cmd + Shift + P`)
+- Search for **Remove Unused Imports**
 
-\!\[feature X\]\(images/feature-x.png\)
+### Keybinding
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+This extension **does not provide any keybinding** for the command. You can assign your own custom keybinding for it by pressing the cog icon that appears to the right of the command name in the Command Palette.
 
-## Requirements
+## Known issues
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+The format of the document may change after running this command. For instance, final semicolons are added to the modified imports.
 
-## Extension Settings
+## Acknowledgments
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+This extension is inspired by [vsc-sort-imports](https://github.com/amatiasq/vsc-sort-imports).
 
-For example:
+## License
 
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+This project is licensed under the [MIT License](LICENSE).

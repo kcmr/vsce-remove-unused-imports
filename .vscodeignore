@@ -1,10 +1,13 @@
 .vscode/**
 .vscode-test/**
 out/test/**
+__tests__/**
+.husky
 
 src/**
 .gitignore
 .yarnrc
+.eslintcache
 vsc-extension-quickstart.md
 **/tsconfig.json
 **/.eslintrc.json

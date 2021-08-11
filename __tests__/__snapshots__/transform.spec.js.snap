@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`removes unused import specifiers and import declarations 1`] = `
+"
+  import 'side-effects';
+  import { used } from 'package-2';
+  import usedImport from 'package-3';
+  import { something as alias } from 'package-4';
+  import * as group from 'package-3';
+
+  used();
+  usedImport();
+  alias.method();
+  group.property;
+  "
+`;
