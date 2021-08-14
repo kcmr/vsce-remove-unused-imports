@@ -1,15 +1,20 @@
-.vscode/**
-.vscode-test/**
-out/test/**
-__tests__/**
-.husky
+# source
+src/
+images/
 
-src/**
-.gitignore
-.yarnrc
-.eslintcache
+# development
+__tests__/
+node_modules
 vsc-extension-quickstart.md
-**/tsconfig.json
-**/.eslintrc.json
-**/*.map
-**/*.ts
+
+# config folders
+.vscode/
+.husky/
+
+# config files
+.gitignore
+.eslintcache
+.prettierrc
+.prettierignore
+.eslintrc.js
+tsconfig.json

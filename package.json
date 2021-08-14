@@ -4,7 +4,8 @@
   "version": "1.0.1",
   "description": "Removes unused ES6 imports in JavaScript and TypeScript files without changing the order",
   "categories": [
-    "Formatters"
+    "Formatters",
+    "Programming Languages"
   ],
   "keywords": [
     "imports",
@@ -19,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kcmr/vsce-remove-unused-imports.git"
+    "url": "https://github.com/kcmr/vsce-remove-unused-imports.git"
   },
   "license": "MIT",
   "author": "Kus Cámara",
@@ -45,10 +46,11 @@
     "theme": "dark"
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
+    "vscode:prepublish": "npm run build -- --minify",
     "clean": "rimraf dist",
+    "build": "npm run clean && esbuild \"./src/extension.ts\" --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+    "watch": "npm run clean && npm run build -- --sourcemap --watch",
     "compile": "npm run clean && tsc -p ./",
-    "watch": "npm run clean && tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "test": "jest",
     "lint": "eslint src --ext ts",
@@ -67,6 +69,8 @@
     "@types/vscode": "^1.0.0",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",
+    "babylon": "^6.18.0",
+    "esbuild": "^0.12.20",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
