@@ -1,6 +1,6 @@
 # Remove Unused Imports
 
-VS Code extension to remove unused ES6 imports inside JavaScript and TypeScript files (`.js`, `.jsx`, `.ts` and `.tsx` extensions) without changing the current order, as opposed to the native VS Code "Sort Imports" functionality.
+VS Code extension to remove unused ES6 imports inside JavaScript and TypeScript files (`.js`, `.jsx`, `.ts` and `.tsx` extensions) without changing the current order, as opposed to the built-in VS Code "Organize Imports" functionality.
 
 ![Remove Unused Imports screenshot](images/remove-unused-imports.gif)
 
