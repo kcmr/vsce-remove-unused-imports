@@ -37,7 +37,7 @@
     "onCommand:remove-unused-imports.main"
   ],
   "engines": {
-    "vscode": "^1.59.0"
+    "vscode": "^1.0.0"
   },
   "icon": "images/icon.png",
   "galleryBanner": {
