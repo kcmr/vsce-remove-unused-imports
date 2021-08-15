@@ -54,7 +54,7 @@
     "pretest": "npm run compile && npm run lint",
     "test": "jest",
     "lint": "eslint src --ext ts",
-    "format": "prettier --write \"**/*.{js,ts,md}\"",
+    "format": "prettier --write \"**/*.{js,ts,md,json}\"",
     "prepare": "husky install"
   },
   "dependencies": {
