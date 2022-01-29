@@ -1,10 +1,4 @@
-# [DEPRECATED] Remove Unused Imports
-
-## ⚠️ You may not need this extension!
-
-VS Code already provides this functionality through [Code Actions](https://code.visualstudio.com/docs/editor/refactoring#_code-actions-quick-fixes-and-refactorings) (I didn't know it 🤷‍♀️). You can remove one or multiple unused imports by placing the cursor over an unused import (faded) and pressing `Ctrl/Cmd + .`. A contextual menu will appear with options to remove the unused imports.
-
-![Native VS Code "Code Action" to delete unused imports screenshot](images/code-actions-remove-unused-imports.gif)
+# Remove Unused Imports
 
 ## Description
 
