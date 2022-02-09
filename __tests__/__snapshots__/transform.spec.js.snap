@@ -14,3 +14,47 @@ exports[`removes unused import specifiers and import declarations 1`] = `
   group.property;
   "
 `;
+
+exports[`removes unused imports in TypeScript React without crashing 1`] = `
+"
+  import { useQuery } from \\"@apollo/client\\";
+  import type { NextPage } from \\"next\\";
+  import { useTranslation } from \\"react-i18next\\";
+  import { NoDataFound } from \\"@/NoDataFound\\";
+
+  import { Query, QueryFindFirstUserArgs } from \\"~/@types/generated/graphqlTypes\\";
+  import { whereIdIs } from \\"~/front/gql/helpers/graphql.helpers\\";
+  import { ONE_USER_QUERY } from \\"~/front/gql/queries\\";
+  import { useSession } from \\"~/front/hooks\\";
+
+  const colProps = {
+    md: { span: 12 },
+    span: 24,
+    xl: { span: 6 },
+  };
+
+  const VideosPage: NextPage = () => {
+    const { user } = useSession();
+    const { t } = useTranslation();
+  
+    const { data } = useQuery<Query, QueryFindFirstUserArgs>(
+      ONE_USER_QUERY,
+      whereIdIs(user?.id),
+    );
+  
+  
+    const userData = data?.findFirstUser;
+    if (!userData) {
+      return <NoDataFound dataName={String(t(\\"pages.videos.no-datas\\"))} />;
+    }
+  
+    return (
+      <>
+       
+      </>
+    );
+  };
+
+  export default VideosPage;
+  "
+`;

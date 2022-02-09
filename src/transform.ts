@@ -1,5 +1,5 @@
 import { parse, print } from 'recast';
-import { BabelFileResult, transformFromAstSync } from '@babel/core';
+import { transformFromAstSync, parseSync } from '@babel/core';
 import { removeUnusedImports } from './plugin';
 
 const options = {
@@ -11,14 +11,22 @@ const options = {
 
 export function transform(code: string) {
   const ast = parse(code, {
-    parser: require('recast/parsers/babel'),
+    parser: {
+      parse(code: string) {
+        return parseSync(code, {
+          plugins: [
+            require('@babel/plugin-syntax-jsx'),
+            [require('@babel/plugin-syntax-typescript'), { isTSX: true }],
+          ],
+          parserOpts: {
+            tokens: true,
+          },
+        });
+      },
+    },
   });
 
-  const { ast: babelAst } = transformFromAstSync(
-    ast,
-    code,
-    options,
-  ) as BabelFileResult;
+  const { ast: babelAst } = transformFromAstSync(ast, code, options)!;
 
   return babelAst && print(babelAst).code;
 }

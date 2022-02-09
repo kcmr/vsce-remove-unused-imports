@@ -59,6 +59,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
+    "@babel/plugin-syntax-jsx": "^7.16.7",
+    "@babel/plugin-syntax-typescript": "^7.16.7",
     "@babel/types": "^7.15.0",
     "@types/babel__core": "^7.1.15",
     "@types/glob": "^7.1.3",
