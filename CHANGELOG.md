@@ -1,8 +1,10 @@
 # Change Log
 
-All notable changes to the "remove-unused-imports" extension will be documented in this file.
+## [1.0.5] - 2022-02-09
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+### Fixed
+
+- Crash with some TypeScript React syntax.
 
 ## [1.0.0]
 
