@@ -69,4 +69,5 @@ it('removes unused imports in TypeScript React without crashing', () => {
   `;
 
   expect(() => transform(code)).not.toThrow();
+  expect(transform(code)).toMatchSnapshot();
 });
