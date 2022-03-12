@@ -1,7 +1,7 @@
 {
   "name": "remove-unused-imports",
   "displayName": "Remove Unused Imports",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Removes unused ES6 imports in JavaScript and TypeScript files without changing the order",
   "categories": [
     "Formatters",
