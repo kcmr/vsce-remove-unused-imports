@@ -19,7 +19,7 @@ it('removes unused import specifiers and import declarations', () => {
   expect(result).toMatchSnapshot();
 });
 
-it('removes unused imports in TypeScript React without crashing', () => {
+it('supports TypeScript React', () => {
   const code = `
   import { PlusCircleOutlined } from "@ant-design/icons";
   import { useQuery } from "@apollo/client";
@@ -66,6 +66,22 @@ it('removes unused imports in TypeScript React without crashing', () => {
   };
   
   export default VideosPage;
+  `;
+
+  expect(() => transform(code)).not.toThrow();
+  expect(transform(code)).toMatchSnapshot();
+});
+
+it('supports decorators', () => {
+  const code = `
+  import { SomeClass, UnusedClass } from './some-path';
+
+  @injectable()
+  export class CustomClass extends SomeClass {
+    constructor(@injectMapper() mapper: Mapper) {
+      supper(mapper);
+    }
+  }
   `;
 
   expect(() => transform(code)).not.toThrow();

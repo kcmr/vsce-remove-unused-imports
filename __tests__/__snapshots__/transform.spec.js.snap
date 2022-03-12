@@ -15,7 +15,7 @@ exports[`removes unused import specifiers and import declarations 1`] = `
   "
 `;
 
-exports[`removes unused imports in TypeScript React without crashing 1`] = `
+exports[`supports TypeScript React 1`] = `
 "
   import { useQuery } from \\"@apollo/client\\";
   import type { NextPage } from \\"next\\";
@@ -56,5 +56,18 @@ exports[`removes unused imports in TypeScript React without crashing 1`] = `
   };
 
   export default VideosPage;
+  "
+`;
+
+exports[`supports decorators 1`] = `
+"
+  import { SomeClass } from './some-path';
+
+  @injectable()
+  export class CustomClass extends SomeClass {
+    constructor(@injectMapper() mapper: Mapper) {
+      supper(mapper);
+    }
+  }
   "
 `;
