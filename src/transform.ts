@@ -17,6 +17,7 @@ export function transform(code: string) {
           plugins: [
             require('@babel/plugin-syntax-jsx'),
             [require('@babel/plugin-syntax-typescript'), { isTSX: true }],
+            [require('@babel/plugin-proposal-decorators'), { legacy: true }],
           ],
           parserOpts: {
             tokens: true,
