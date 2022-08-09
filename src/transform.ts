@@ -1,13 +1,6 @@
 import { parse, print } from 'recast';
-import { transformFromAstSync, parseSync } from '@babel/core';
+import { transformFromAstSync, parseSync, TransformOptions } from '@babel/core';
 import { removeUnusedImports } from './plugin';
-
-const options = {
-  cloneInputAst: false,
-  code: false,
-  ast: true,
-  plugins: [removeUnusedImports],
-};
 
 export function transform(code: string) {
   const ast = parse(code, {
@@ -27,7 +20,12 @@ export function transform(code: string) {
     },
   });
 
-  const { ast: babelAst } = transformFromAstSync(ast, code, options)!;
+  const { ast: babelAst } = transformFromAstSync(ast, code, {
+    cloneInputAst: false,
+    code: false,
+    ast: true,
+    plugins: [removeUnusedImports],
+  } as TransformOptions)!;
 
   return babelAst && print(babelAst).code;
 }

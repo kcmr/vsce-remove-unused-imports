@@ -11,6 +11,16 @@ VS Code extension to remove unused ES6 imports inside JavaScript and TypeScript 
 - **Open the Command Palette** (`Ctrl/Cmd + Shift + P`)
 - Search for **Remove Unused Imports**
 
+### Run on save
+
+The command can be executed every time a file is saved via Code Actions. To enable it, set `source.removeUnusedImports` to `true` inside `editor.codeActionsOnSave` in your VSCode settings:
+
+```json
+"editor.codeActionsOnSave": {
+  "source.removeUnusedImports": true
+}
+```
+
 ### Keybinding
 
 This extension **does not provide any keybinding** for the command. You can assign your own custom keybinding for it by pressing the cog icon that appears to the right of the command name in the Command Palette.

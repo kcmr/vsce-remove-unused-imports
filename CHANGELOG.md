@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.1.0] - 2022-08-10
+
+### Features
+
+- Add support for running on save via Code Actions
+
 ## [1.0.6] - 2022-03-12
 
 ### Fixed
