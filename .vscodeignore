@@ -8,7 +8,6 @@ vsc-extension-quickstart.md
 
 # config folders
 .vscode/
-.husky/
 
 # config files
 .gitignore
