@@ -1,7 +1,7 @@
 {
   "name": "remove-unused-imports",
   "displayName": "Remove Unused Imports",
-  "version": "1.2.0",
+  "version": "0.0.0-development",
   "description": "Removes unused ES6 imports in JavaScript and TypeScript files without changing the order",
   "categories": [
     "Formatters",
@@ -59,21 +59,19 @@
     "test": "jest",
     "lint": "eslint src --ext ts",
     "format": "prettier --write \"**/*.{js,ts,md,json}\"",
-    "prepare": "husky install"
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/plugin-proposal-decorators": "^7.17.2",
     "@babel/plugin-syntax-jsx": "^7.16.7",
     "@babel/plugin-syntax-typescript": "^7.16.7",
-    "@babel/types": "^7.15.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
     "@types/babel__core": "^7.1.15",
-    "@types/glob": "^7.1.3",
-    "@types/node": "^16.4.13",
     "@types/vscode": "^1.0.0",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",
-    "babylon": "^6.18.0",
     "esbuild": "^0.12.20",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
@@ -83,17 +81,51 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-promise": "^6.0.0",
-    "glob": "^7.1.7",
-    "husky": "^6.0.0",
     "jest": "^27.0.6",
     "lint-staged": "^11.1.2",
     "prettier": "^2.3.2",
     "recast": "^0.20.5",
     "rimraf": "^3.0.2",
+    "semantic-release": "^19.0.3",
+    "semantic-release-vsce": "^5.1.0",
+    "simple-git-hooks": "^2.8.0",
     "typescript": "^4.3.2"
   },
   "lint-staged": {
     "src/*.ts": "eslint --cache --fix",
     "*": "prettier --ignore-unknown --write"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "pre-push": "npm t"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/git",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      [
+        "semantic-release-vsce",
+        {
+          "publish": true,
+          "packageVsix": true
+        }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {
+              "path": "*.vsix",
+              "label": "Extension File"
+            }
+          ]
+        }
+      ]
+    ],
+    "branches": [
+      "master"
+    ]
   }
 }
