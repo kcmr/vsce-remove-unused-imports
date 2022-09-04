@@ -24,7 +24,7 @@ export function transform(code: string) {
     cloneInputAst: false,
     code: false,
     ast: true,
-    plugins: [removeUnusedImports],
+    plugins: [[removeUnusedImports, { opt1: 'hola' }]],
   } as TransformOptions)!;
 
   return babelAst && print(babelAst).code;

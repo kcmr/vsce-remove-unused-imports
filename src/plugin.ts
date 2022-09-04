@@ -16,7 +16,9 @@ function hasAllSpecifiersRemoved(path: NodePath<types.ImportDeclaration>) {
 export function removeUnusedImports(): PluginObj {
   return {
     visitor: {
-      ImportDeclaration(path: NodePath<types.ImportDeclaration>) {
+      ImportDeclaration(path: NodePath<types.ImportDeclaration>, state) {
+        console.log('plugin options', state.opts);
+
         path.get('specifiers').forEach((specifier) => {
           isUnusedImportSpecifier(specifier) && specifier.remove();
           hasAllSpecifiersRemoved(path) && path.remove();
