@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/kcmr/vsce-remove-unused-imports/compare/v1.2.2...v1.2.3) (2023-01-10)
+
+### Bug Fixes
+
+- **ci:** allow git commit to semantic-release ([2bc3a20](https://github.com/kcmr/vsce-remove-unused-imports/commit/2bc3a20b1eaa771053616b3e760846b7c3633589))
+- support "satisfies" TS keyword ([ffb1f90](https://github.com/kcmr/vsce-remove-unused-imports/commit/ffb1f9031cc0eec221c3fb03459674dadd04952d))
+
 ## [1.2.2](https://github.com/kcmr/vsce-remove-unused-imports/compare/v1.2.1...v1.2.2) (2022-08-13)
 
 ### Bug Fixes
