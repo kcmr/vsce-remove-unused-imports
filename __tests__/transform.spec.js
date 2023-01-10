@@ -87,3 +87,17 @@ it('supports decorators', () => {
   expect(() => transform(code)).not.toThrow();
   expect(transform(code)).toMatchSnapshot();
 });
+
+it('supports "satisfies" TS keyword', () => {
+  const code = `
+  type Test = {
+    t1: string;
+  };
+  
+  export const TEST_JSON = {
+    t1: 't1',
+  } satisfies Test;
+  `;
+
+  expect(() => transform(code)).not.toThrow();
+});
