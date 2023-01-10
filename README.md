@@ -33,6 +33,10 @@ The format of the document may change after running this command. For instance, 
 
 This extension is inspired by [vsc-sort-imports](https://github.com/amatiasq/vsc-sort-imports).
 
+## Support me
+
+<a href="https://www.buymeacoffee.com/kuscamara"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=kuscamara&button_colour=FF5F5F&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" /></a>
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
