@@ -12,6 +12,7 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
+          token: ${{ secrets.CI_GITHUB_TOKEN }}
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.tool-versions'
