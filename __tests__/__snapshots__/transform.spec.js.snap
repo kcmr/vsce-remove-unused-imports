@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`does not remove parameter decorators 1`] = `
+"
+  import { Component, Inject } from '@angular/core';
+  import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+
+  @Component({
+    template: '',
+    styles: ['']
+  })
+  export class SomeComponent {
+    constructor(
+      @Inject(MAT_DIALOG_DATA)
+      public dialogData
+    ) { }
+  }
+  "
+`;
+
 exports[`removes unused import specifiers and import declarations 1`] = `
 "
   import 'side-effects';

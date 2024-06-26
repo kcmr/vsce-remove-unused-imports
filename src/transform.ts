@@ -7,13 +7,10 @@ export function transform(code: string) {
     parser: {
       parse(code: string) {
         return parseSync(code, {
-          plugins: [
-            require('@babel/plugin-syntax-jsx'),
-            [require('@babel/plugin-syntax-typescript'), { isTSX: true }],
-            [require('@babel/plugin-proposal-decorators'), { legacy: true }],
-          ],
           parserOpts: {
             tokens: true,
+            errorRecovery: true,
+            plugins: ['jsx', 'typescript', 'decorators-legacy'],
           },
         });
       },
