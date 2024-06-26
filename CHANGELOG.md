@@ -1,3 +1,9 @@
+## [1.2.4](https://github.com/kcmr/vsce-remove-unused-imports/compare/v1.2.3...v1.2.4) (2024-06-26)
+
+### Bug Fixes
+
+- prevent removing decorator imports used as parameters ([b92c74b](https://github.com/kcmr/vsce-remove-unused-imports/commit/b92c74b6daeea8a9f1925f0098d0ecc32c0aedea)), closes [#20](https://github.com/kcmr/vsce-remove-unused-imports/issues/20) [#34](https://github.com/kcmr/vsce-remove-unused-imports/issues/34)
+
 ## [1.2.3](https://github.com/kcmr/vsce-remove-unused-imports/compare/v1.2.2...v1.2.3) (2023-01-10)
 
 ### Bug Fixes
