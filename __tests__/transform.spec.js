@@ -88,6 +88,27 @@ it('supports decorators', () => {
   expect(transform(code)).toMatchSnapshot();
 });
 
+it('does not remove parameter decorators', () => {
+  const code = `
+  import { Component, Inject } from '@angular/core';
+  import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+
+  @Component({
+    template: '',
+    styles: ['']
+  })
+  export class SomeComponent {
+    constructor(
+      @Inject(MAT_DIALOG_DATA)
+      public dialogData
+    ) { }
+  }
+  `;
+
+  expect(() => transform(code)).not.toThrow();
+  expect(transform(code)).toMatchSnapshot();
+});
+
 it('supports "satisfies" TS keyword', () => {
   const code = `
   type Test = {
