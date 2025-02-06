@@ -21,6 +21,14 @@ The command can be executed every time a file is saved via Code Actions. To enab
 }
 ```
 
+### Preserve specified import identifiers
+
+The extension also supports preserving specified import identifiers, even if they are not used. To enable it, set `removeUnusedImports.preserve` to an array of import identifiers in your VSCode settings:
+
+```json
+"removeUnusedImports.preserve": ["React", "ReactDOM"]
+```
+
 ### Keybinding
 
 This extension **does not provide any keybinding** for the command. You can assign your own custom keybinding for it by pressing the cog icon that appears to the right of the command name in the Command Palette.

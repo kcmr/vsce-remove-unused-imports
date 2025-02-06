@@ -32,10 +32,19 @@
         "command": "remove-unused-imports.main",
         "title": "Remove Unused Imports"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Remove Unused Imports",
+      "properties": {
+        "removeUnusedImports.preserve": {
+          "type": "array",
+          "default": [],
+          "description": "List of import identifiers to preserve. Example: ['React', 'ReactDOM']"
+        }
+      }
+    }
   },
   "activationEvents": [
-    "onCommand:remove-unused-imports.main",
     "onLanguage:javascript",
     "onLanguage:javascriptreact",
     "onLanguage:typescript",
