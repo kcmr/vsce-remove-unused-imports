@@ -31,7 +31,7 @@ function collectParameterDecorators(path: NodePath<types.TSParameterProperty>) {
   });
 }
 
-export function removeUnusedImports(): PluginObj {
+export function removeUnusedImports(preserve?: string[]): PluginObj {
   return {
     visitor: {
       Program(path: NodePath<types.Program>) {
@@ -44,6 +44,8 @@ export function removeUnusedImports(): PluginObj {
       ImportDeclaration(path: NodePath<types.ImportDeclaration>) {
         path.get('specifiers').forEach((specifier) => {
           if (decorators.has(specifier.node.local.name)) return;
+          if (preserve?.includes(specifier.node.local.name)) return;
+
           isUnusedImportSpecifier(specifier) && specifier.remove();
           hasAllSpecifiersRemoved(path) && path.remove();
         });

@@ -122,3 +122,19 @@ it('supports "satisfies" TS keyword', () => {
 
   expect(() => transform(code)).not.toThrow();
 });
+
+it('preserves specified import identifiers', () => {
+  const code = `
+  import { React, useState } from 'react';
+  import { SomeComponent } from './some-path';
+
+  const App = () => {
+    const [count, setCount] = useState(0);
+
+    return <SomeComponent count={count} />;
+  };
+  `;
+
+  expect(() => transform(code, ['React'])).not.toThrow();
+  expect(transform(code, ['React'])).toMatchSnapshot();
+});
