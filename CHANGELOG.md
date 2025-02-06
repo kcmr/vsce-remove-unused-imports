@@ -1,3 +1,9 @@
+# [1.3.0](https://github.com/kcmr/vsce-remove-unused-imports/compare/v1.2.4...v1.3.0) (2025-02-06)
+
+### Features
+
+- allow to configure imports to preserve ([#41](https://github.com/kcmr/vsce-remove-unused-imports/issues/41)) ([bef66a2](https://github.com/kcmr/vsce-remove-unused-imports/commit/bef66a26787789ced22447a284b0df80d9fce1ca))
+
 ## [1.2.4](https://github.com/kcmr/vsce-remove-unused-imports/compare/v1.2.3...v1.2.4) (2024-06-26)
 
 ### Bug Fixes
