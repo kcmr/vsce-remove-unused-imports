@@ -135,6 +135,18 @@ it('preserves specified import identifiers', () => {
   };
   `;
 
-  expect(() => transform(code, ['React'])).not.toThrow();
   expect(transform(code, ['React'])).toMatchSnapshot();
+});
+
+it('preserves imports of JSX type parameters', () => {
+  const code = `
+  import { SomeComponent } from './some-path';  
+  import { SomeType } from './another-path';
+
+  const App = () => {
+    return <SomeComponent<SomeType> />;
+  };
+  `;
+
+  expect(transform(code)).toMatchSnapshot();
 });
