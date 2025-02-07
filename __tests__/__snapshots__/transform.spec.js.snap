@@ -18,6 +18,17 @@ exports[`does not remove parameter decorators 1`] = `
   "
 `;
 
+exports[`preserves imports of JSX type parameters 1`] = `
+"
+  import { SomeComponent } from './some-path';  
+  import { SomeType } from './another-path';
+
+  const App = () => {
+    return <SomeComponent<SomeType> />;
+  };
+  "
+`;
+
 exports[`preserves specified import identifiers 1`] = `
 "
   import { React, useState } from 'react';
