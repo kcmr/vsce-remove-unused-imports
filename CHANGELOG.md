@@ -1,3 +1,9 @@
+## [1.3.1](https://github.com/kcmr/vsce-remove-unused-imports/compare/v1.3.0...v1.3.1) (2025-02-07)
+
+### Bug Fixes
+
+- prevent removing JSX type parameter imports ([#43](https://github.com/kcmr/vsce-remove-unused-imports/issues/43)) ([e99a497](https://github.com/kcmr/vsce-remove-unused-imports/commit/e99a497b6cce605548818e7f1d8df7d2047c5160))
+
 # [1.3.0](https://github.com/kcmr/vsce-remove-unused-imports/compare/v1.2.4...v1.3.0) (2025-02-06)
 
 ### Features
