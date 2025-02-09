@@ -13,11 +13,11 @@ VS Code extension to remove unused ES6 imports inside JavaScript and TypeScript 
 
 ### Run on save
 
-The command can be executed every time a file is saved via Code Actions. To enable it, set `source.removeUnusedImports` to `true` inside `editor.codeActionsOnSave` in your VSCode settings:
+The command can be executed every time a file is saved via Code Actions. To enable it, set `source.removeUnusedImports` to `always`, `explicit` or `never` inside `editor.codeActionsOnSave` in your VSCode settings:
 
 ```json
 "editor.codeActionsOnSave": {
-  "source.removeUnusedImports": true
+  "source.removeUnusedImports": "explicit" // "always", "never"
 }
 ```
 
