@@ -69,7 +69,6 @@ it('supports TypeScript React', () => {
   `;
 
   expect(() => transform(code)).not.toThrow();
-  console.log(transform(code));
   expect(transform(code)).toMatchSnapshot();
 });
 
