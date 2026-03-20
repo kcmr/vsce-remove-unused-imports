@@ -71,8 +71,10 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.0",
+    "@babel/core": "^7.29.0",
+    "@babel/preset-typescript": "^7.28.5",
     "@babel/plugin-proposal-decorators": "^7.17.2",
+    "@babel/plugin-syntax-import-attributes": "^7.28.6",
     "@babel/plugin-syntax-jsx": "^7.16.7",
     "@babel/plugin-syntax-typescript": "^7.16.7",
     "@semantic-release/changelog": "^6.0.1",

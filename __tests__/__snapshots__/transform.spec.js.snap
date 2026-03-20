@@ -20,7 +20,7 @@ exports[`does not remove parameter decorators 1`] = `
 
 exports[`preserves imports of JSX type parameters 1`] = `
 "
-  import { SomeComponent } from './some-path';  
+  import { SomeComponent } from './some-path';
   import { SomeType } from './another-path';
 
   const App = () => {
@@ -78,21 +78,21 @@ exports[`supports TypeScript React 1`] = `
   const VideosPage: NextPage = () => {
     const { user } = useSession();
     const { t } = useTranslation();
-  
+
     const { data } = useQuery<Query, QueryFindFirstUserArgs>(
       ONE_USER_QUERY,
       whereIdIs(user?.id),
     );
-  
-  
+
+
     const userData = data?.findFirstUser;
     if (!userData) {
       return <NoDataFound dataName={String(t(\\"pages.videos.no-datas\\"))} />;
     }
-  
+
     return (
       <>
-       
+
       </>
     );
   };
@@ -111,5 +111,13 @@ exports[`supports decorators 1`] = `
       supper(mapper);
     }
   }
+  "
+`;
+
+exports[`supports module attributes 1`] = `
+"
+  import packageJson from \\"./package.json\\" with { type: \\"json\\" };
+
+  console.log(packageJson);
   "
 `;

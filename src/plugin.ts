@@ -8,6 +8,7 @@ type ImportSpecifier =
 class ImportTracker {
   private decorators = new Set<string>();
   private typeParameters = new Set<string>();
+  private typeAnnotations = new Set<string>();
 
   addDecorator(name: string) {
     this.decorators.add(name);
@@ -17,10 +18,15 @@ class ImportTracker {
     this.typeParameters.add(name);
   }
 
+  addTypeAnnotation(name: string) {
+    this.typeAnnotations.add(name);
+  }
+
   shouldPreserve(name: string, userPreserved?: string[]) {
     return (
       this.decorators.has(name) ||
       this.typeParameters.has(name) ||
+      this.typeAnnotations.has(name) ||
       userPreserved?.includes(name)
     );
   }
@@ -70,6 +76,17 @@ function collectJSXTypeParameters(
   }
 }
 
+function collectTypeAnnotationIdentifiers(
+  path: NodePath,
+  tracker: ImportTracker,
+) {
+  path.traverse({
+    Identifier(identPath: NodePath<types.Identifier>) {
+      tracker.addTypeAnnotation(identPath.node.name);
+    },
+  });
+}
+
 export function removeUnusedImports(preserve?: string[]): PluginObj {
   const tracker = new ImportTracker();
 
@@ -82,6 +99,9 @@ export function removeUnusedImports(preserve?: string[]): PluginObj {
           },
           JSXElement(path: NodePath<types.JSXElement>) {
             collectJSXTypeParameters(path, tracker);
+          },
+          TSTypeAnnotation(path: NodePath<types.TSTypeAnnotation>) {
+            collectTypeAnnotationIdentifiers(path, tracker);
           },
         });
       },
