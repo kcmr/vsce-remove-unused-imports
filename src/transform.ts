@@ -10,7 +10,12 @@ export function transform(code: string, preserve?: string[]) {
           parserOpts: {
             tokens: true,
             errorRecovery: true,
-            plugins: ['jsx', 'typescript', 'decorators-legacy'],
+            plugins: [
+              'jsx',
+              'typescript',
+              'decorators-legacy',
+              'importAttributes',
+            ],
           },
         });
       },

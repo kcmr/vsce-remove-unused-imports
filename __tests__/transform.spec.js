@@ -8,7 +8,7 @@ it('removes unused import specifiers and import declarations', () => {
   import usedImport from 'package-3';
   import { something as alias } from 'package-4';
   import * as group from 'package-3';
-  
+
   used();
   usedImport();
   alias.method();
@@ -27,7 +27,7 @@ it('supports TypeScript React', () => {
   import type { NextPage } from "next";
   import { useTranslation } from "react-i18next";
   import { NoDataFound } from "@/NoDataFound";
-  
+
   import { Title } from "@/_layout/Title";
   import { ButtonLink } from "@/ButtonLink";
   import { LoadingOrError } from "@/LoadingOrError";
@@ -36,39 +36,40 @@ it('supports TypeScript React', () => {
   import { whereIdIs } from "~/front/gql/helpers/graphql.helpers";
   import { ONE_USER_QUERY } from "~/front/gql/queries";
   import { useSession } from "~/front/hooks";
-  
+
   const colProps = {
     md: { span: 12 },
     span: 24,
     xl: { span: 6 },
   };
-  
+
   const VideosPage: NextPage = () => {
     const { user } = useSession();
     const { t } = useTranslation();
-  
+
     const { data } = useQuery<Query, QueryFindFirstUserArgs>(
       ONE_USER_QUERY,
       whereIdIs(user?.id),
     );
-  
-  
+
+
     const userData = data?.findFirstUser;
     if (!userData) {
       return <NoDataFound dataName={String(t("pages.videos.no-datas"))} />;
     }
-  
+
     return (
       <>
-       
+
       </>
     );
   };
-  
+
   export default VideosPage;
   `;
 
   expect(() => transform(code)).not.toThrow();
+  console.log(transform(code));
   expect(transform(code)).toMatchSnapshot();
 });
 
@@ -114,7 +115,7 @@ it('supports "satisfies" TS keyword', () => {
   type Test = {
     t1: string;
   };
-  
+
   export const TEST_JSON = {
     t1: 't1',
   } satisfies Test;
@@ -140,12 +141,23 @@ it('preserves specified import identifiers', () => {
 
 it('preserves imports of JSX type parameters', () => {
   const code = `
-  import { SomeComponent } from './some-path';  
+  import { SomeComponent } from './some-path';
   import { SomeType } from './another-path';
 
   const App = () => {
     return <SomeComponent<SomeType> />;
   };
+  `;
+
+  expect(transform(code)).toMatchSnapshot();
+});
+
+it('supports module attributes', () => {
+  const code = `
+  import packageJson from "./package.json" with { type: "json" };
+  import { something } from "./some-module" with { type: "json" };
+
+  console.log(packageJson);
   `;
 
   expect(transform(code)).toMatchSnapshot();
