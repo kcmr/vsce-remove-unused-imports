@@ -51,7 +51,7 @@
     "onLanguage:typescriptreact"
   ],
   "engines": {
-    "vscode": "^1.0.0"
+    "vscode": "^1.110.0"
   },
   "icon": "images/icon.png",
   "galleryBanner": {
