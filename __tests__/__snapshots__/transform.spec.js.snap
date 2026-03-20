@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`does not remove parameter decorators 1`] = `
 "
@@ -59,15 +59,15 @@ exports[`removes unused import specifiers and import declarations 1`] = `
 
 exports[`supports TypeScript React 1`] = `
 "
-  import { useQuery } from \\"@apollo/client\\";
-  import type { NextPage } from \\"next\\";
-  import { useTranslation } from \\"react-i18next\\";
-  import { NoDataFound } from \\"@/NoDataFound\\";
+  import { useQuery } from "@apollo/client";
+  import type { NextPage } from "next";
+  import { useTranslation } from "react-i18next";
+  import { NoDataFound } from "@/NoDataFound";
 
-  import { Query, QueryFindFirstUserArgs } from \\"~/@types/generated/graphqlTypes\\";
-  import { whereIdIs } from \\"~/front/gql/helpers/graphql.helpers\\";
-  import { ONE_USER_QUERY } from \\"~/front/gql/queries\\";
-  import { useSession } from \\"~/front/hooks\\";
+  import { Query, QueryFindFirstUserArgs } from "~/@types/generated/graphqlTypes";
+  import { whereIdIs } from "~/front/gql/helpers/graphql.helpers";
+  import { ONE_USER_QUERY } from "~/front/gql/queries";
+  import { useSession } from "~/front/hooks";
 
   const colProps = {
     md: { span: 12 },
@@ -87,7 +87,7 @@ exports[`supports TypeScript React 1`] = `
 
     const userData = data?.findFirstUser;
     if (!userData) {
-      return <NoDataFound dataName={String(t(\\"pages.videos.no-datas\\"))} />;
+      return <NoDataFound dataName={String(t("pages.videos.no-datas"))} />;
     }
 
     return (
@@ -116,7 +116,7 @@ exports[`supports decorators 1`] = `
 
 exports[`supports module attributes 1`] = `
 "
-  import packageJson from \\"./package.json\\" with { type: \\"json\\" };
+  import packageJson from "./package.json" with { type: "json" };
 
   console.log(packageJson);
   "
