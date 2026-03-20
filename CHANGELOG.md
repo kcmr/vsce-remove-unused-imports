@@ -1,3 +1,13 @@
+# [1.4.0](https://github.com/kcmr/vsce-remove-unused-imports/compare/v1.3.1...v1.4.0) (2026-03-20)
+
+### Bug Fixes
+
+- update vscode engines ([0636aec](https://github.com/kcmr/vsce-remove-unused-imports/commit/0636aecd937514481954a206d18614fbbb1568db))
+
+### Features
+
+- update babel dependencies and add support for type annotations ([fb8bc99](https://github.com/kcmr/vsce-remove-unused-imports/commit/fb8bc998a031695b5cdb89d2adb2b473eb62de37))
+
 ## [1.3.1](https://github.com/kcmr/vsce-remove-unused-imports/compare/v1.3.0...v1.3.1) (2025-02-07)
 
 ### Bug Fixes
